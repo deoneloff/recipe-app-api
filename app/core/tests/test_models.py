@@ -1,6 +1,7 @@
 from django.test import TestCase
 from django.contrib.auth import get_user_model
 
+
 class ModelTests(TestCase):
 
         # Arrange
@@ -36,7 +37,8 @@ class ModelTests(TestCase):
 
     def test_create_user_invalid_email(self):
         '''Test creating user with no email raises error'''
-        with self.assertRaises(ValueError): # anything running inside with-statement must raise a ValueError, else test will fail
+        with self.assertRaises(ValueError):
+            # anything running inside with-statement must raise a ValueError
             get_user_model().objects.create_user(None, 'pass123')
 
     def test_create_superuser_successful(self):
